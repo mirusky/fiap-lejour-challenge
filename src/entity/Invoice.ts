@@ -19,7 +19,7 @@ export class Invoice {
 
   @Column()
   accepted: string;
-  
+
   @Column()
   vendor_category: string;
 }

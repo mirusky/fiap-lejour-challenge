@@ -13,7 +13,7 @@ export class Appointment {
 
   @Column()
   status: string;
-  
+
   @Column()
   vendor_category: string;
 
