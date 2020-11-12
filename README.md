@@ -1,7 +1,12 @@
-# Awesome Project Build with TypeORM
+# FIAP Lejour Challenge
 
-Steps to run this project:
+The purpose of this challenge is create a beautiful way to see insights about weddings.
 
-1. Run `npm i` command
+## Usage
+
+1. Run `yarn` command
 2. Setup database settings inside `ormconfig.json` file
-3. Run `npm start` command
+3. Run `yarn start` command
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
