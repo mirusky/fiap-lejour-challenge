@@ -1,13 +1,13 @@
-import { Entity, Column } from "typeorm";
+import { Entity, Column, PrimaryColumn } from "typeorm";
 
 @Entity()
 export class Favorite {
-  @Column()
-  id: number;
+  @PrimaryColumn({ name: "id", generated: "increment" })
+  ID: number;
 
-  @Column()
+  @Column({ name: "wedding_id" })
   wedding_id: number;
 
-  @Column()
+  @Column({ name: "vendor_id" })
   vendor_id: number;
 }

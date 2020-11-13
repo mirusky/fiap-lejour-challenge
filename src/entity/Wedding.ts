@@ -1,22 +1,22 @@
-import { Entity, Column } from "typeorm";
+import { Entity, Column, PrimaryColumn } from "typeorm";
 
 @Entity()
 export class Wedding {
-  @Column()
-  id: number;
+  @PrimaryColumn({ name: "id" })
+  ID: number;
 
-  @Column()
-  owner_id: number;
+  @Column({ name: "owner_id" })
+  OWNER_ID: number;
 
-  @Column()
-  budget: number;
+  @Column({ name: "budget", type: "float4", nullable: true })
+  BUDGET: number;
 
-  @Column()
-  wedding_date: string;
+  @Column({ name: "wedding_date", nullable: true })
+  WEDDING_DATE: string;
 
-  @Column()
-  number_of_guests: number;
+  @Column({ name: "number_of_guests", type: "float4", nullable: true })
+  NUMBER_OF_GUESTS: number;
 
-  @Column()
-  style: string;
+  @Column({ name: "style" })
+  STYLE: string;
 }

@@ -1,25 +1,25 @@
-import { Entity, Column } from "typeorm";
+import { Entity, Column, PrimaryColumn } from "typeorm";
 
 @Entity()
 export class Invoice {
-  @Column()
-  id: number;
+  @PrimaryColumn({ name: "id" })
+  ID: number;
 
-  @Column()
-  wedding_id: number;
+  @Column({ name: "wedding_id" })
+  WEDDING_ID: number;
 
-  @Column()
-  vendor_id: number;
+  @Column({ name: "vendor_id" })
+  VENDOR_ID: number;
 
-  @Column()
-  amount: number;
+  @Column({ name: "amount", type: "float4" })
+  AMOUNT: number;
 
-  @Column()
-  vendor_amount: number;
+  @Column({ name: "vendor_amount", type: "float4" })
+  VENDOR_AMOUNT: number;
 
-  @Column()
-  accepted: string;
+  @Column({ name: "accepted" })
+  ACCEPTED: string;
 
-  @Column()
-  vendor_category: string;
+  @Column({ name: "vendor_category" })
+  VENDOR_CATEGORY: string;
 }

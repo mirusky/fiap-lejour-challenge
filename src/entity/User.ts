@@ -1,10 +1,10 @@
-import { Entity, Column } from "typeorm";
+import { Entity, Column, PrimaryColumn } from "typeorm";
 
 @Entity()
 export class User {
-  @Column()
-  id: number;
+  @PrimaryColumn({ name: "id" })
+  ID: number;
 
-  @Column()
-  created_at: string;
+  @Column({ name: "created_at" })
+  CREATED_AT: string;
 }

@@ -1,22 +1,22 @@
-import { Entity, Column } from "typeorm";
+import { Entity, Column, PrimaryColumn } from "typeorm";
 
 @Entity()
 export class Appointment {
-  @Column()
-  id: number;
+  @PrimaryColumn({ name: "id" })
+  ID: number;
 
-  @Column()
-  wedding_id: number;
+  @Column({ name: "wedding_id" })
+  WEDDING_ID: number;
 
-  @Column()
-  vendor_id: number;
+  @Column({ name: "vendor_id" })
+  VENDOR_ID: number;
 
-  @Column()
-  status: string;
+  @Column({ name: "status" })
+  STATUS: string;
 
-  @Column()
-  vendor_category: string;
+  @Column({ name: "vendor_category" })
+  VENDOR_CATEGORY: string;
 
-  @Column()
-  begins_at: string;
+  @Column({ name: "begins_at" })
+  BEGINS_AT: string;
 }
