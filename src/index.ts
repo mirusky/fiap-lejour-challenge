@@ -72,7 +72,8 @@ createConnection()
       .catch((e) => {
         Axios.get(BASEURL + "/wedding").then((result) => {
           let weddings = result.data as Wedding[];
-          weddings.map((w) => { // HACK: Normalizing some fields since it's not normalized 
+          weddings.map((w) => {
+            // HACK: Normalizing some fields since it's not normalized
             w.BUDGET = w.BUDGET.toString() == "NULL" ? null : w.BUDGET;
             w.WEDDING_DATE = w.WEDDING_DATE == "NULL" ? null : w.WEDDING_DATE;
             w.NUMBER_OF_GUESTS =

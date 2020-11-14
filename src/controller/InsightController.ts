@@ -4,7 +4,11 @@ import { NextFunction, Request, Response } from "express";
 export class InsightController {
   private manager = getManager();
 
-  async weddingMetrics(request: Request, response: Response, next: NextFunction) {
+  async weddingMetrics(
+    request: Request,
+    response: Response,
+    next: NextFunction
+  ) {
     return this.manager.query(`
 -- Gastos casamento, agrupados por mes e ano
 select 
@@ -22,6 +26,4 @@ where
 group by "month", "year"
     `);
   }
-
-  
 }
