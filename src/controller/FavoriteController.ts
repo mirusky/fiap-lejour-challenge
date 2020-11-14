@@ -2,7 +2,7 @@ import { getRepository } from "typeorm";
 import { NextFunction, Request, Response } from "express";
 import { Favorite } from "../entity/Favorite";
 
-export class UserController {
+export class FavoriteController {
   private favoriteRepository = getRepository(Favorite);
 
   async all(request: Request, response: Response, next: NextFunction) {

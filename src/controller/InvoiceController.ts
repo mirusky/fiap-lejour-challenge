@@ -2,7 +2,7 @@ import { getRepository } from "typeorm";
 import { NextFunction, Request, Response } from "express";
 import { Invoice } from "../entity/Invoice";
 
-export class UserController {
+export class InvoiceController {
   private invoiceRepository = getRepository(Invoice);
 
   async all(request: Request, response: Response, next: NextFunction) {
