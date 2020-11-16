@@ -4,14 +4,12 @@ import express from "express";
 import bodyParser from "body-parser";
 import { Request, Response } from "express";
 import { Routes } from "./routes";
-import Axios from "axios";
+import { API } from "./services/lejour";
 import { User } from "./entity/User";
 import { Appointment } from "./entity/Appointment";
 import { Favorite } from "./entity/Favorite";
 import { Invoice } from "./entity/Invoice";
 import { Wedding } from "./entity/Wedding";
-
-const BASEURL = "https://sheet2api.com/v1/ByR2h1huRjyQ/fiap";
 
 createConnection()
   .then(async (connection) => {
@@ -46,7 +44,7 @@ createConnection()
     getManager()
       .findOneOrFail(Appointment)
       .catch((e) => {
-        Axios.get(BASEURL + "/appointment").then((result) => {
+        API.get("/appointment").then((result) => {
           const appointments = result.data as Appointment[];
           getManager().save(Appointment, appointments);
         });
@@ -54,7 +52,7 @@ createConnection()
     getManager()
       .findOneOrFail(Favorite)
       .catch((e) => {
-        Axios.get(BASEURL + "/wedding_favorites").then((result) => {
+        API.get("/wedding_favorites").then((result) => {
           const favorites = result.data as Favorite[];
           getManager().save(Favorite, favorites);
         });
@@ -62,7 +60,7 @@ createConnection()
     getManager()
       .findOneOrFail(Invoice)
       .catch((e) => {
-        Axios.get(BASEURL + "/invoice").then((result) => {
+        API.get("/invoice").then((result) => {
           const invoices = result.data as Invoice[];
           getManager().save(Invoice, invoices);
         });
@@ -70,7 +68,7 @@ createConnection()
     getManager()
       .findOneOrFail(Wedding)
       .catch((e) => {
-        Axios.get(BASEURL + "/wedding").then((result) => {
+        API.get("/wedding").then((result) => {
           let weddings = result.data as Wedding[];
           weddings.map((w) => {
             // HACK: Normalizing some fields since it's not normalized
@@ -86,7 +84,7 @@ createConnection()
     getManager()
       .findOneOrFail(User)
       .catch((e) => {
-        Axios.get(BASEURL + "/user").then((result) => {
+        API.get("/user").then((result) => {
           const users = result.data as User[];
           getManager().save(User, users);
         });

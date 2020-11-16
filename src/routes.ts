@@ -130,8 +130,50 @@ export const Routes = [
 
   {
     method: "get",
-    route: "/insights/weddings",
+    route: "/insights/weddings/metrics",
     controller: InsightController,
     action: "weddingMetrics",
+  },
+  {
+    method: "get",
+    route: "/insights/vendor/favorites",
+    controller: InsightController,
+    action: "vendorFavorited",
+  },
+  {
+    method: "get",
+    route: "/insights/vendor/deny",
+    controller: InsightController,
+    action: "vendorDeny",
+  },
+  {
+    method: "get",
+    route: "/insights/vendor/accepts",
+    controller: InsightController,
+    action: "vendorAccepts",
+  },
+  {
+    method: "get",
+    route: "/insights/vendor/all",
+    controller: InsightController,
+    action: "vendorDenyAndAccepts",
+  },
+  {
+    method: "get",
+    route: "/insights/invoices/metrics",
+    controller: InsightController,
+    action: "invoicesMetrics",
+  },
+  {
+    method: "get",
+    route: "/insights/weddings/styles",
+    controller: InsightController,
+    action: "weddingStyles",
+  },
+  {
+    method: "get",
+    route: "/insights/vendor/metrics",
+    controller: InsightController,
+    action: "vendorMetrics",
   },
 ];
